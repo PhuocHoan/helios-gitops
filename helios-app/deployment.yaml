@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helios-app
+  namespace: helios-apps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helios-app
+  template:
+    metadata:
+      labels:
+        app: helios-app
+    spec:
+      containers:
+      - name: app
+        image: nginx:latest  # Sẽ được Tekton update
+        ports:
+        - containerPort: 80
