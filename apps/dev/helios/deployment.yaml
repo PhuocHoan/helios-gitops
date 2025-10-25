@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: helios
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: helios
@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
         - name: app
-          image: docker.io/hophuochoan/helios:6bb38b0616b03f632d0a767efa262130c4a32b9e@sha256:582e69d3566ade7d3ceb24cb81f1531e8261259eaee73ce77fc8e7315b570c58
+          image: docker.io/hophuochoan/helios:main@sha256:d0cc0e2addfe981d7027725f37cb24f045938836d378e9d6ee7d96c901ed0f5e
           ports:
-            - containerPort: 8080
+            - containerPort: 1000
           resources:
             requests:
               memory: '128Mi'
@@ -34,4 +34,4 @@ spec:
     app: helios
   ports:
     - port: 80
-      targetPort: 8080
+      targetPort: 1000
