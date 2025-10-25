@@ -4,7 +4,7 @@ metadata:
   name: helios
   namespace: default
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: helios
@@ -14,10 +14,10 @@ spec:
         app: helios
     spec:
       containers:
-      - name: app
-        image: docker.io/hophuochoan/helios:main@sha256:1e7245d4d87c89b95369a61def9d40115643afdd17f8013f2c10c75ddddb4752
-        ports:
-        - containerPort: 8080
+        - name: app
+          image: docker.io/hophuochoan/helios:main@sha256:7232264d4e1ab285b5ed2fb65df502a6a8339897d7b3806962325e989da110a7
+          ports:
+            - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
@@ -28,7 +28,7 @@ spec:
   selector:
     app: helios
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
   type: ClusterIP
