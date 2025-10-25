@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: docker.io/hophuochoan/helios:15419f60b0384cdc51bdd56fdf31c1475b289bfb@sha256:fff09382c3162e9ffe71e6ae3fc5fe7eb76dde50ace69afc0001bdabbad6fa4a
+        image: docker.io/hophuochoan/helios:main@sha256:e107811d648dbf0697eb4714f5dfd70efb2e7882f7586d6cd67d8d6e05fa7558
         ports:
         - containerPort: 8080
 ---
