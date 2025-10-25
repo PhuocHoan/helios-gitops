@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
         - name: app
-          image: docker.io/hophuochoan/helios:main@sha256:d23ae675bc395a4ff8681b00a629927a74f1abb98665afc5e295989c919d78c9
+          image: docker.io/hophuochoan/helios:main@sha256:b28afa0374190192b66be2293b4539def85d8212a5c86ddaf891faf2ec208a80
           ports:
-            - containerPort: 1000
+            - containerPort: 2000
           resources:
             requests:
               memory: '128Mi'
@@ -34,4 +34,4 @@ spec:
     app: helios
   ports:
     - port: 80
-      targetPort: 1000
+      targetPort: 2000
